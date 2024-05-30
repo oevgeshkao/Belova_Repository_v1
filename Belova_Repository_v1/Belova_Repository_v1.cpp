@@ -8,7 +8,14 @@ using namespace std;
 int x;
 void VvodX()
 {
-
+	cout << "Ввод X: ";
+	while (!(cin >> x) || (cin.peek() != '\n') || (x < 0 ||x <100 || x > 999))
+	{
+		cin.clear();
+		while (cin.get() != '\n');
+		cout << "Incorrect input. Try again: ";// выводим сообщение об ошибке
+	}
+	cout << "X= " << x << endl;
 }
 void VvodMenshN()
 {
@@ -36,7 +43,7 @@ int get_variant(int count) {
 	return variant;
 }
 void print_menu() {
-	setlocale(LC_ALL, "Russian");
+	
 	system("cls"); // очищаем экран
 	cout << "Выбор операции:" << endl;
 	cout << "1. ввести целое трехзначное число X " << endl;
@@ -48,6 +55,7 @@ void print_menu() {
 }
 int main()
 {
+	setlocale(LC_ALL, "Russian");
 	int variant;
 	do {
 		print_menu();
