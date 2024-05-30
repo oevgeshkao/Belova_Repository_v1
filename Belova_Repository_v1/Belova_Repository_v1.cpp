@@ -6,19 +6,19 @@
 #include "conio.h"
 using namespace std;
 int x;
-int VvodX()
+void VvodX()
 {
 
 }
-int VvodMenshN()
+void VvodMenshN()
 {
 
 }
-int Firsth()
+void Firsth()
 {
 
 }
-int NX()
+void NX()
 {
 
 }
