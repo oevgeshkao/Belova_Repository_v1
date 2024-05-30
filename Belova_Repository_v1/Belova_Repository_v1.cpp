@@ -35,6 +35,7 @@ void VvodMenshN()
 void Firsth()
 {
 
+	cout << "Первая цифра Х= " << (x - x%100)/100;
 }
 void NX()
 {
@@ -80,10 +81,16 @@ int main()
 			else { cout << "Сначала введите Х"<<endl;VvodX(); }
 			break;
 		case 3:
-			Firsth();
+			
+			if (x > 0) Firsth();
+			else { cout << "Сначала введите Х" << endl;VvodX(); }
 			break;
+			
 		case 4:
-			NX();
+			
+			if (x == 0) { cout << "Сначала введите Х" << endl;VvodX(); }
+			if (n==0) { cout << "Сначала введите N" << endl; VvodMenshN; }
+			if(x!=0 && n!=0 )NX();
 			break;
 		}
 		if (variant != 5)
