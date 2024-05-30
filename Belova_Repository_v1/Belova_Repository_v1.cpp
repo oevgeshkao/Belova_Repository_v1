@@ -5,7 +5,8 @@
 #include <string>
 #include "conio.h"
 using namespace std;
-int x;
+int x=0;
+int n;
 void VvodX()
 {
 	cout << "Ввод X: ";
@@ -19,6 +20,16 @@ void VvodX()
 }
 void VvodMenshN()
 {
+	cout << "Ввод N: ";
+	while (!(cin >> n) || (cin.peek() != '\n') || ( n>3))
+	{
+		cin.clear();
+		while (cin.get() != '\n');
+		cout << "Incorrect input. Try again: ";// выводим сообщение об ошибке
+	}
+
+	cout << "X= " << x << endl;
+	cout << "N= " << n << endl;
 
 }
 void Firsth()
@@ -65,7 +76,8 @@ int main()
 			VvodX();
 			break;
 		case 2:
-			VvodMenshN();
+			if (x > 0) VvodMenshN();
+			else { cout << "Сначала введите Х"<<endl;VvodX(); }
 			break;
 		case 3:
 			Firsth();
