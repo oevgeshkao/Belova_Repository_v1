@@ -21,7 +21,7 @@ void VvodX()
 void VvodMenshN()
 {
 	cout << "Ввод N: ";
-	while (!(cin >> n) || (cin.peek() != '\n') || ( n>3))
+	while (!(cin >> n) || (cin.peek() != '\n') || (x < 0 || n>3))
 	{
 		cin.clear();
 		while (cin.get() != '\n');
@@ -39,7 +39,22 @@ void Firsth()
 }
 void NX()
 {
+	cout << "X= " << x << endl;
+	cout << "N= " << n << endl;
+	switch (n) {
+	case 1:
+		cout << "Первая цифра Х= " << (x - x % 100) / 100<<endl;
+		break;
+	case 2:
+		cout << "Вторая цифра Х= " << (x % 100 - x % 10) / 10 << endl;
+		break;
+	case 3:
+		cout << "Третья цифра Х= " << (x % 100) % 10 << endl;
+		break;
 
+	default:
+		break;
+	}
 }
 
 int get_variant(int count) {
